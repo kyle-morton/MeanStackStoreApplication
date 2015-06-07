@@ -9,13 +9,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Shop Homepage</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="public/css/shop-homepage.css" rel="stylesheet">
+
+    <!-- JS -->
+    <!-- load angular and angular-route via CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+
+    <!-- controllers -->
+  	<script src="public/app/controllers/userCtrl.js"></script>
+
+  	<!-- main Angular app files -->
+  	<script src="public/app/app.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +38,8 @@
 
 </head>
 
-<body>
+<body ng-app="shopApp" ng-controller="userController as userCtrl">
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -39,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">Shopping Application</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,7 +66,18 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                     <li class="dropdown" id="menuLogin">
+                       <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+                       <div class="dropdown-menu" style="padding:17px;">
+                         <form class="form" id="formLogin">
+                           <input name="username" id="username" type="text" placeholder="Username">
+                           <input name="password" id="password" type="password" placeholder="Password"><br>
+                           <button type="button" id="btnLogin" class="btn">Login</button>
+                         </form>
+                       </div>
+                     </li>
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -66,11 +90,10 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">Shop Name</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
+                    <a href="#" class="list-group-item">Books</a>
+                    <a href="#" class="list-group-item">Movies</a>
+                    <a href="#" class="list-group-item">Games</a>
                 </div>
             </div>
 
@@ -87,13 +110,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="public/img/booksSmall.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="public/img/dvdsSmall.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="public/img/gamingSmall.jpg" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -219,13 +242,6 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <h4><a href="#">Like this template?</a>
-                        </h4>
-                        <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a> on how to build a working review system for your online store!</p>
-                        <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
-                    </div>
-
                 </div>
 
             </div>
@@ -243,7 +259,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Kyle Morton Development</p>
                 </div>
             </div>
         </footer>
@@ -252,10 +268,12 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="public/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+
+    <h4>{{userCtrl.message}}</h4>
 
 </body>
 
