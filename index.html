@@ -66,15 +66,25 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
-                     <li class="dropdown" id="menuLogin">
+                     <li class="dropdown" id="menuLogin" ng-show="userCtrl.loggedIn === false">
                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
                        <div class="dropdown-menu" style="padding:17px;">
-                         <form class="form" id="formLogin">
-                           <input name="username" id="username" type="text" placeholder="Username">
-                           <input name="password" id="password" type="password" placeholder="Password"><br>
-                           <button type="button" id="btnLogin" class="btn">Login</button>
+                         <form class="form-group" id="formLogin" ng-submit="userCtrl.login()">
+                           <label for="userName">Username: </label>
+                           <input type="text" class="form-control" id="userName" placeholder="username" ng-model="userCtrl.tempUserName">
+                           <label for="password">Password: </label>
+                           <input type="password" class="form-control" id="password" placeholder="password"> </br>
+                           <button type="submit" id="btnLogin" class="btn btn-default">Login</button>
                          </form>
                        </div>
+                     </li>
+                     <li class="dropdown" id="menuLogin" ng-show="userCtrl.loggedIn === true">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">{{userCtrl.welcomeMessage}}</a>
+                        <div class="dropdown-menu" style="padding:17px;">
+                          <form  class="form-group" id="formLogin" ng-submit="userCtrl.logout()">
+                            <button type="submit" id="btnLogin" class="btn btn-default">Logout</button>
+                          </form>
+                        </div>
                      </li>
                 </ul>
 
@@ -272,8 +282,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="public/js/bootstrap.min.js"></script>
-
-    <h4>{{userCtrl.message}}</h4>
 
 </body>
 
