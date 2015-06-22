@@ -21,10 +21,21 @@ angular.module('routerRoutes', ['ngRoute'])
 
 		// // route for the about page
 		.when('/books', {
-			templateUrl : 'public/assets/views/books.html',
+			templateUrl : 'public/assets/views/items.html',
 			controller : 'bookController',
-			controllerAs: 'book'
+			controllerAs: 'itemCtlr'
 		})
+    .when('/movies', {
+      templateUrl : 'public/assets/views/items.html',
+      controller : 'movieController',
+      controllerAs: 'itemCtlr'
+    })
+    .when('/games', {
+			templateUrl : 'public/assets/views/items.html',
+			controller : 'gameController',
+			controllerAs: 'itemCtlr'
+		})
+
 		// // route for the contact page
 		// .when('/contact', {
 		// 	templateUrl : 'views/contact.html',
