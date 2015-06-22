@@ -4,6 +4,8 @@ angular.module('userCtrl', [])
 
 .controller('userController', function() {
 
+	console.log("Created userController");
+
 	var vm = this;
 
   vm.message = "Hello, World!";

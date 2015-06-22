@@ -1,5 +1,6 @@
-angular.module('mainCtrl', [])
+console.log("Init mainCtrl");
 
+angular.module('mainCtrl', [])
 
 .controller('mainController', function() {
 
@@ -8,6 +9,5 @@ angular.module('mainCtrl', [])
     var vm = this;
 
     this.message = "Hello from the mainCtrl!!!";
-
 
 });

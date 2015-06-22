@@ -9,19 +9,22 @@ angular.module('routerRoutes', ['ngRoute'])
 	//apply routes to the routeProvider object
 	$routeProvider
 
+    //REM: use the formal name for controller here
+    //not the short hand mainCtrl
+
 		// route for the home page
 		.when('/', {
 			templateUrl : 'public/assets/views/home.html',
-			controller : 'mainCtrl',
+			controller : 'mainController',
 			controllerAs: 'main'
 		})
 
 		// // route for the about page
-		// .when('/about', {
-		// 	templateUrl : 'views/about.html',
-		// 	controller : 'aboutController',
-		// 	controllerAs: 'about'
-		// })
+		.when('/books', {
+			templateUrl : 'public/assets/views/books.html',
+			controller : 'bookController',
+			controllerAs: 'book'
+		})
 		// // route for the contact page
 		// .when('/contact', {
 		// 	templateUrl : 'views/contact.html',

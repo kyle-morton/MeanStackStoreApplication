@@ -1,3 +1,3 @@
-angular.module('shopApp', ['userCtrl', 'mainCtrl', 'routerRoutes']);
+angular.module('shopApp', ['userCtrl', 'mainCtrl', 'bookCtrl', 'routerRoutes']);
 
 console.log("created shopping app");
