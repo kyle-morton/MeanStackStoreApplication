@@ -16,26 +16,15 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="public/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
 
     <!-- Custom CSS -->
     <link href="public/assets/css/shop-homepage.css" rel="stylesheet">
 
-    <!-- JS -->
-    <!-- load angular and angular-route via CDN -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+    <!-- Angular Animate CSS -->
+    <link href="public/assets/css/style.css" rel="stylesheet">
 
-    <!-- controllers -->
-  	<script src="public/app/controllers/userCtrl.js"></script>
-    <script src="public/app/controllers/mainCtrl.js"></script>
-    <script src="public/app/controllers/bookCtrl.js"></script>
-    <script src="public/app/controllers/movieCtrl.js"></script>
-    <script src="public/app/controllers/gameCtrl.js"></script>
-
-  	<!-- main Angular app files -->
-  	<script src="public/app/app.js"></script>
-    <script src="public/app/app.routes.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,14 +49,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Shopping Application</a>
+                <a class="navbar-brand" href="/">Shopping Application</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
                      <li class="dropdown" id="menuLogin" ng-show="userCtrl.loggedIn === false">
                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
                        <div class="dropdown-menu" style="padding:17px;">
@@ -84,10 +70,26 @@
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">{{userCtrl.welcomeMessage}}</a>
                         <div class="dropdown-menu" style="padding:17px;">
                           <form  class="form-group" id="formLogin" ng-submit="userCtrl.logout()">
+                            <a href="/user" class="btn btn-default">Account</a>
                             <button type="submit" id="btnLogin" class="btn btn-default">Logout</button>
                           </form>
                         </div>
                      </li>
+
+                     <!-- New Login -->
+                     <!-- <div class="form-login">
+                          <h4>Welcome back.</h4>
+                          <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+                          </br>
+                          <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+                          </br>
+                          <div class="wrapper">
+                          <span class="group-btn">
+                              <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+                          </span>
+                          </div>
+                    </div> -->
+
                 </ul>
 
             </div>
@@ -101,11 +103,31 @@
     	<div ng-view></div>
     </main>
 
+
+
+
     <!-- jQuery -->
     <script src="public/assets/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="public/assets/js/bootstrap.min.js"></script>
+
+    <!-- JS -->
+    <!-- load angular and angular-route via CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+
+    <!-- controllers -->
+    <script src="public/app/controllers/userCtrl.js"></script>
+    <script src="public/app/controllers/mainCtrl.js"></script>
+    <script src="public/app/controllers/bookCtrl.js"></script>
+    <script src="public/app/controllers/movieCtrl.js"></script>
+    <script src="public/app/controllers/gameCtrl.js"></script>
+
+    <!-- main Angular app files -->
+    <script src="public/app/app.js"></script>
+    <script src="public/app/app.routes.js"></script>
 
 </body>
 

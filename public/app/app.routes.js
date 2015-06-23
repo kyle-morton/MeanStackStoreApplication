@@ -35,6 +35,11 @@ angular.module('routerRoutes', ['ngRoute'])
 			controller : 'gameController',
 			controllerAs: 'itemCtlr'
 		})
+    .when('/user', {
+			templateUrl : 'public/assets/views/user.html',
+			controller : 'userController',
+			controllerAs: 'userCtlr'
+		})
 
 		// // route for the contact page
 		// .when('/contact', {
