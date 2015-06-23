@@ -30,7 +30,7 @@
 
     <!-- Angular Animate CSS -->
     <link href="public/assets/css/style.css" rel="stylesheet">
-    <link href="public/assets/css/loginStyle.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -89,12 +89,39 @@
     	<div ng-view></div>
     </main>
 
+    <div class="container">
+  <!-- <h2>Modal Example</h2> -->
+  <!-- Trigger the modal with a button -->
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+
+
+  <!-- Modal Alert -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>{{userCtrl.message}}</p>
+          <p>There was an error with your Username/Password combination. Please try again.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 
 
 
     <!-- jQuery -->
     <script src="public/assets/js/jquery.js"></script>
-    <script src="public/assets/js/login.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="public/assets/js/bootstrap.min.js"></script>

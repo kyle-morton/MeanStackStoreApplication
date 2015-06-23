@@ -40,11 +40,11 @@ angular.module('routerRoutes', ['ngRoute'])
 			controller : 'userController',
 			controllerAs: 'userCtlr'
 		})
-    .when('/login', {
-			templateUrl : 'public/assets/views/login.html',
-			controller : 'userController',
-			controllerAs: 'userCtlr'
-		})
+    // .when('/login', {
+		// 	templateUrl : 'public/assets/views/login.html',
+		// 	controller : 'userController',
+		// 	controllerAs: 'userCtlr'
+		// })
 
 
 		// // route for the contact page

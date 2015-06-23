@@ -16,6 +16,10 @@ angular.module('userCtrl', [])
 	vm.tempPassword = "";
 	vm.welcomeMessage = "";
 
+	// vm.loginPageMethod = function () {
+	// 	console.log("loginPageMethod() called");
+	// }
+
 	vm.login = function () {
 		console.log("login called with: " + vm.tempUserName);
 
@@ -34,10 +38,11 @@ angular.module('userCtrl', [])
 		}
 		else { //redirect if incorrect login
 			console.log("failed login with : " + vm.tempUserName);
-			$location.path('/login');
+			//$location.path('/login');
 			//$("#loginNav").toggle();
 			vm.tempUserName = "";
 			vm.tempPassword = "";
+			$('#myModal').modal('show');
 		}
 
 	};
