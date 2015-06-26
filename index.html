@@ -41,11 +41,11 @@
 
 </head>
 
-<body ng-app="shopApp">
+<body ng-app="shopApp" ng-controller="mainController as main">
 
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"  ng-controller="userController as userCtrl">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> <!-- ng-controller="userController as userCtrl"> -->
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -60,19 +60,20 @@
 
           <ul class="nav navbar-nav" id="loginNav">
 
-              <li ng-show="userCtrl.loggedIn === false">
-                <form class="navbar-form navbar-right" id="formLogin" ng-submit="userCtrl.login()">
+            <li ng-show="main.loggedIn === false">
+              <li>
+                <form class="navbar-form navbar-right" id="formLogin" ng-submit="main.doLogin()">
                    <div class="form-group">
-                       <input type="text" class="form-control" id="userName" placeholder="username" ng-model="userCtrl.tempUserName">
-                       <input type="password" class="form-control" id="password" placeholder="password" ng-model="userCtrl.tempPassword">
+                       <input type="text" class="form-control" id="userName" placeholder="username" ng-model="main.loginData.username">
+                       <input type="password" class="form-control" id="password" placeholder="password" ng-model="main.loginData.password">
                    </div>
-                  <button type="submit" id="btnLogin" class="btn btn-default">Login</button>
+                   <button type="submit" id="btnLogin" class="btn btn-default">Login</button>
                 </form>
              </li>
 
-               <li ng-cloak ng-show="userCtrl.loggedIn === true">
-                 <a class="navbar-brand" href="/user">{{userCtrl.welcomeMessage}}</a>
-                  <form  class="navbar-form navbar-right" id="formLogin" ng-submit="userCtrl.logout()">
+              <li ng-cloak ng-show="main.loggedIn === true">
+                 <a class="navbar-brand" href="/user">main.loginData.username</a>
+                  <form  class="navbar-form navbar-right" id="formLogin" ng-submit="main.doLogout()">
                     <button type="submit" id="btnLogin" class="btn btn-default">Logout</button>
                   </form>
                </li>
@@ -125,6 +126,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="public/assets/js/bootstrap.min.js"></script>
+
+    <!-- services -->
+    <script src="public/app/services/authService.js"></script>
+    <script src="public/app/services/userService.js"></script>
 
     <!-- controllers -->
     <script src="public/app/controllers/userCtrl.js"></script>
