@@ -57,11 +57,10 @@
                 </button>
                 <a class="navbar-brand" href="/">Shopping App</a>
             </div>
-
+          <div class="pull-right">
           <ul class="nav navbar-nav" id="loginNav">
 
-            <li ng-show="main.loggedIn === false">
-              <li>
+              <li ng-cloak ng-if="main.loggedIn === false">
                 <form class="navbar-form navbar-right" id="formLogin" ng-submit="main.doLogin()">
                    <div class="form-group">
                        <input type="text" class="form-control" id="userName" placeholder="username" ng-model="main.loginData.username">
@@ -71,14 +70,15 @@
                 </form>
              </li>
 
-              <li ng-cloak ng-show="main.loggedIn === true">
-                 <a class="navbar-brand" href="/user">main.loginData.username</a>
+              <li ng-cloak ng-if="main.loggedIn === true">
+                 <a class="navbar-brand" href="/user">{{main.user.username}}</a>
                   <form  class="navbar-form navbar-right" id="formLogin" ng-submit="main.doLogout()">
                     <button type="submit" id="btnLogin" class="btn btn-default">Logout</button>
                   </form>
                </li>
 
         </ul>
+      </div>
 
             <!-- /.navbar-collapse -->
         </div>
@@ -104,7 +104,6 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-body">
-          <p>{{userCtrl.message}}</p>
           <p>There was an error with your Username/Password combination. Please try again.</p>
         </div>
         <div class="modal-footer">

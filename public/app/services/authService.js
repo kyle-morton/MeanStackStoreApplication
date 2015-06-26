@@ -121,7 +121,6 @@ angular.module('authService', [])
 
 		// if the token exists, add it to the header params as token
 		if (token) {
-			console.log(config.params);
 			config.params = {'token' : token};
 		}
 
