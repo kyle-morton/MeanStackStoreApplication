@@ -1,57 +1,70 @@
 #content-views 		{ position:relative; }
-
-/*.ng-enter, .ng-leave
-		 { width:100%; position:absolute; }*/
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
 
 .ng-enter {
-	-webkit-animation:zoomInDown .3s both ease-in;
-	-moz-animation:zoomInDown .3s both ease-in;
-		animation:zoomInDown .3s both ease-in;
+	/*-webkit-animation:fadein .3s both ease-in;
+	-moz-animation:fadein .3s both ease-in;
+		animation:fadein .3s both ease-in;*/
+
+		opacity:0;  /* make things invisible upon start */
+		-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+		-moz-animation:fadeIn ease-in 1;
+		animation:fadeIn ease-in 1;
+
+		-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+		-moz-animation-fill-mode:forwards;
+		animation-fill-mode:forwards;
+
+		-webkit-animation-duration:.3s;
+		-moz-animation-duration:.3s;
+		animation-duration:.3s;
 }
 
 .ng-leave {
-	-webkit-animation:zoomOutDown 0.3s both ease-in;
-	-moz-animation:zoomOutDown 0.3s both ease-in;
-	animation:zoomOutDown 0.3s both ease-in;
+	/*-webkit-animation:fadeout 0.3s both ease-in;
+	-moz-animation:fadeout 0.3s both ease-in;
+	animation:fadeout 0.3s both ease-in;*/
+
+	opacity:1;  /* make things invisible upon start */
+	-webkit-animation:fadeOut ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeOut ease-in 1;
+	animation:fadeOut ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:.3s;
+	-moz-animation-duration:.3s;
+	animation-duration:.3s;
 }
 
-/* New Login Form Styling */
-/*
-@import url(http://fonts.googleapis.com/css?family=Roboto:400);
-body {
-  background-color:#fff;
-  -webkit-font-smoothing: antialiased;
-  font: normal 14px Roboto,arial,sans-serif;
-}
+/*.fade-in {
+ opacity:0;  /* make things invisible upon start */
+ -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+ -moz-animation:fadeIn ease-in 1;
+ animation:fadeIn ease-in 1;
 
-.container {
-    padding: 25px;
-    position: fixed;
-}
+ -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+ -moz-animation-fill-mode:forwards;
+ animation-fill-mode:forwards;
 
-.form-login {
-    background-color: #EDEDED;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 15px;
-    border-color:#d2d2d2;
-    border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
-}
-
-h4 {
- border:0 solid #fff;
- border-bottom-width:1px;
- padding-bottom:10px;
- text-align: center;
-}
-
-.form-control {
-    border-radius: 10px;
-}
-
-.wrapper {
-    text-align: center;
+ -webkit-animation-duration:1s;
+ -moz-animation-duration:1s;
+ animation-duration:1s;
 }*/
+
+.btn
+{
+        opacity:0.5;
+}
+.btn:hover
+{
+        opacity:1;
+}

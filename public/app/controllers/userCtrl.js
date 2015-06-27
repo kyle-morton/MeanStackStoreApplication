@@ -3,7 +3,7 @@ console.log("controller init");
 angular.module('userCtrl', [])
 
 //only include $location here!!!
-.controller('userController', function($rootScope, $location, Auth) {
+.controller('userController', function($rootScope, $location, Auth, User) {
 
 	console.log("Created userController");
 
@@ -32,6 +32,23 @@ angular.module('userCtrl', [])
 
 	    $location.path('/');
 	  };
+
+		vm.createNewUser = function () {
+
+			console.log("called createUser with : " + vm.user);
+
+				// var userData = {};
+				// userData.name = "Tim Timmons";
+				// userData.email = "ttm@gmail.com";
+				// userData.address = "2222 ttm dr";
+				// userData.phone = "555-555-5555";
+				// userData.username = "ttm";
+				// userData.password = "password";
+				//
+				// console.log("sending user : " + userData);
+				// var result = User.create(userData);
+				// console.log("result: " + result);
+		}
 
 
 	// vm.loginPageMethod = function () {

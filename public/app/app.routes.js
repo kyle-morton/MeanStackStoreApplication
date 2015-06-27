@@ -40,10 +40,10 @@ angular.module('routerRoutes', ['ngRoute'])
 			controller : 'userController',
 			controllerAs: 'userCtlr'
 		})
-     .when('/newUser', {
+     .when('/newUser', { //apply route to a new page (Not just template!)
 		 	templateUrl : 'public/assets/views/newUser.html',
 		 	controller : 'userController',
-		 	controllerAs: 'userCtlr'
+		 	controllerAs: 'userCtrl'
 		 })
 
 
